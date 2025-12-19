@@ -144,6 +144,7 @@
             this.btUpdate.Text = "ACTUALIZAR";
             this.btUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btUpdate.UseVisualStyleBackColor = false;
+            this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
             // 
             // btNew
             // 
@@ -377,6 +378,7 @@
             this.dgvEmployeesList.RowTemplate.Height = 24;
             this.dgvEmployeesList.Size = new System.Drawing.Size(902, 122);
             this.dgvEmployeesList.TabIndex = 21;
+            this.dgvEmployeesList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployeesList_CellClick);
             // 
             // btCancel
             // 

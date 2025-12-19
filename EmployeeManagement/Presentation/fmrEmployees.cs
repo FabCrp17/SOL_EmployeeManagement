@@ -18,6 +18,12 @@ namespace EmployeeManagement.Presentation
             InitializeComponent();
         }
 
+        #region "Vars"
+        int iEmployeeCode = 0;
+        bool isSelecEmploye;
+        #endregion
+
+        #region "PanelFuctions"
         private void label6_Click(object sender, EventArgs e)
         {
 
@@ -71,6 +77,8 @@ namespace EmployeeManagement.Presentation
 
         }
 
+        #endregion
+
         #region "Methods"
 
         private void UploadEmployees(string cSearch)
@@ -81,6 +89,37 @@ namespace EmployeeManagement.Presentation
             EmployeeFormtList();
         }
 
+        private void Clear()
+        {
+            txtName.Clear();
+            txtAddress.Clear();
+            txtPhoneNumber.Clear();
+            txtSalary.Clear();
+
+            cbDeparrment.SelectedIndex = -1;
+            cbPosition.SelectedIndex = -1;
+
+            dtpBirthDate.Value = DateTime.Now;
+
+            isSelecEmploye = false;
+        }
+
+        private void SelectEmployee()
+        {
+            isSelecEmploye = true;
+            iEmployeeCode = Convert.ToInt32(dgvEmployeesList.CurrentRow.Cells["ID"].Value);
+
+            txtName.Text = Convert.ToString(dgvEmployeesList.CurrentRow.Cells["Nombre"].Value);
+            txtAddress.Text = Convert.ToString(dgvEmployeesList.CurrentRow.Cells["Dirección"].Value);
+            txtPhoneNumber.Text = Convert.ToString(dgvEmployeesList.CurrentRow.Cells["Telefono"].Value);
+            txtSalary.Text = Convert.ToString(dgvEmployeesList.CurrentRow.Cells["Salario"].Value);
+
+            cbDeparrment.Text = Convert.ToString(dgvEmployeesList.CurrentRow.Cells["Departamento"].Value);
+            cbPosition.Text = Convert.ToString(dgvEmployeesList.CurrentRow.Cells["Cargo"].Value);
+
+            dtpBirthDate.Value = Convert.ToDateTime(dgvEmployeesList.CurrentRow.Cells["Fecha Nacimiento"].Value);
+
+        }
         private void SelectDepartment()
         {
             D_departments Data = new D_departments();
@@ -145,6 +184,8 @@ namespace EmployeeManagement.Presentation
         {
             ActiveTextBox(true);
             ActiveButon(true);
+            Clear();
+
 
             txtName.Select();
         }
@@ -153,6 +194,27 @@ namespace EmployeeManagement.Presentation
         {
             ActiveTextBox(false);
             ActiveButon(false);
+            Clear();
+        }
+
+        private void dgvEmployeesList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SelectEmployee();
+        }
+
+        private void btUpdate_Click(object sender, EventArgs e)
+        {
+            if (isSelecEmploye == true)
+            {
+                ActiveTextBox(true);
+                ActiveButon(true);
+
+                txtName.Select();
+            }
+            else
+            {
+                MessageBox.Show("No hay ningun campo seleccionado, porfavor seleccione un campo.", "Sistema de Gestión de Empleados", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
