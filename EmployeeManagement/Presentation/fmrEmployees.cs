@@ -101,6 +101,30 @@ namespace EmployeeManagement.Presentation
 
         }
 
+        private void ActiveTextBox(bool bState)
+        {
+            txtAddress.Enabled = bState;
+            txtName.Enabled = bState;
+            txtPhoneNumber.Enabled = bState;
+            txtSalary.Enabled = bState;
+            cbDeparrment.Enabled = bState;
+            cbPosition.Enabled = bState;
+            dtpBirthDate.Enabled = bState;
+
+            txtSearch.Enabled = !bState;
+            btSearch.Enabled = !bState;
+        }
+
+        private void ActiveButon(bool bState)
+        {
+            btSave.Visible = bState;
+            btCancel.Visible = bState;
+
+            btReport.Enabled = !bState;
+            btEliminate.Enabled = !bState;
+            btUpdate.Enabled = !bState;
+        }
+
         private void EmployeeFormtList()
         {
             dgvEmployeesList.Columns[0].Width = 45;
@@ -115,6 +139,20 @@ namespace EmployeeManagement.Presentation
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             UploadEmployees(txtSearch.Text);
+        }
+
+        private void btNew_Click(object sender, EventArgs e)
+        {
+            ActiveTextBox(true);
+            ActiveButon(true);
+
+            txtName.Select();
+        }
+
+        private void btCancel_Click(object sender, EventArgs e)
+        {
+            ActiveTextBox(false);
+            ActiveButon(false);
         }
     }
 }

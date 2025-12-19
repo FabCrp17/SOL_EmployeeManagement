@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmrEmployees));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btLeave = new System.Windows.Forms.Button();
-            this.brReport = new System.Windows.Forms.Button();
+            this.btReport = new System.Windows.Forms.Button();
             this.btEliminate = new System.Windows.Forms.Button();
             this.btUpdate = new System.Windows.Forms.Button();
             this.btNew = new System.Windows.Forms.Button();
@@ -66,7 +66,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
             this.panel1.Controls.Add(this.btLeave);
-            this.panel1.Controls.Add(this.brReport);
+            this.panel1.Controls.Add(this.btReport);
             this.panel1.Controls.Add(this.btEliminate);
             this.panel1.Controls.Add(this.btUpdate);
             this.panel1.Controls.Add(this.btNew);
@@ -94,22 +94,22 @@
             this.btLeave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btLeave.UseVisualStyleBackColor = false;
             // 
-            // brReport
+            // btReport
             // 
-            this.brReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(212)))), ((int)(((byte)(2)))));
-            this.brReport.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.brReport.FlatAppearance.BorderSize = 6;
-            this.brReport.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.brReport.Image = ((System.Drawing.Image)(resources.GetObject("brReport.Image")));
-            this.brReport.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.brReport.Location = new System.Drawing.Point(20, 366);
-            this.brReport.Name = "brReport";
-            this.brReport.Padding = new System.Windows.Forms.Padding(20, 0, 40, 0);
-            this.brReport.Size = new System.Drawing.Size(213, 70);
-            this.brReport.TabIndex = 3;
-            this.brReport.Text = "REPORTE";
-            this.brReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.brReport.UseVisualStyleBackColor = false;
+            this.btReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(212)))), ((int)(((byte)(2)))));
+            this.btReport.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btReport.FlatAppearance.BorderSize = 6;
+            this.btReport.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btReport.Image = ((System.Drawing.Image)(resources.GetObject("btReport.Image")));
+            this.btReport.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btReport.Location = new System.Drawing.Point(20, 366);
+            this.btReport.Name = "btReport";
+            this.btReport.Padding = new System.Windows.Forms.Padding(20, 0, 40, 0);
+            this.btReport.Size = new System.Drawing.Size(213, 70);
+            this.btReport.TabIndex = 3;
+            this.btReport.Text = "REPORTE";
+            this.btReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btReport.UseVisualStyleBackColor = false;
             // 
             // btEliminate
             // 
@@ -161,6 +161,7 @@
             this.btNew.Text = "NUEVO";
             this.btNew.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btNew.UseVisualStyleBackColor = false;
+            this.btNew.Click += new System.EventHandler(this.btNew_Click);
             // 
             // panel2
             // 
@@ -280,6 +281,7 @@
             // txtName
             // 
             this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            this.txtName.Enabled = false;
             this.txtName.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.txtName.Location = new System.Drawing.Point(245, 120);
             this.txtName.Name = "txtName";
@@ -290,6 +292,7 @@
             // txtAddress
             // 
             this.txtAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            this.txtAddress.Enabled = false;
             this.txtAddress.ForeColor = System.Drawing.SystemColors.Window;
             this.txtAddress.Location = new System.Drawing.Point(245, 180);
             this.txtAddress.Name = "txtAddress";
@@ -300,6 +303,7 @@
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            this.txtPhoneNumber.Enabled = false;
             this.txtPhoneNumber.ForeColor = System.Drawing.SystemColors.Window;
             this.txtPhoneNumber.Location = new System.Drawing.Point(245, 263);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
@@ -309,6 +313,7 @@
             // txtSalary
             // 
             this.txtSalary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            this.txtSalary.Enabled = false;
             this.txtSalary.ForeColor = System.Drawing.SystemColors.Window;
             this.txtSalary.Location = new System.Drawing.Point(738, 263);
             this.txtSalary.Name = "txtSalary";
@@ -318,6 +323,7 @@
             // dtpBirthDate
             // 
             this.dtpBirthDate.CalendarMonthBackground = System.Drawing.Color.Green;
+            this.dtpBirthDate.Enabled = false;
             this.dtpBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpBirthDate.Location = new System.Drawing.Point(738, 117);
             this.dtpBirthDate.Name = "dtpBirthDate";
@@ -328,6 +334,7 @@
             // 
             this.cbDeparrment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
             this.cbDeparrment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDeparrment.Enabled = false;
             this.cbDeparrment.ForeColor = System.Drawing.SystemColors.Window;
             this.cbDeparrment.FormattingEnabled = true;
             this.cbDeparrment.Location = new System.Drawing.Point(245, 335);
@@ -339,6 +346,7 @@
             // 
             this.cbPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
             this.cbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPosition.Enabled = false;
             this.cbPosition.ForeColor = System.Drawing.SystemColors.Window;
             this.cbPosition.FormattingEnabled = true;
             this.cbPosition.Location = new System.Drawing.Point(738, 335);
@@ -386,6 +394,8 @@
             this.btCancel.Text = "CANCELAR";
             this.btCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btCancel.UseVisualStyleBackColor = false;
+            this.btCancel.Visible = false;
+            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
             // btSave
             // 
@@ -404,6 +414,7 @@
             this.btSave.Text = "GUARDAR";
             this.btSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btSave.UseVisualStyleBackColor = false;
+            this.btSave.Visible = false;
             // 
             // btSearch
             // 
@@ -493,7 +504,7 @@
         private System.Windows.Forms.DataGridView dgvEmployeesList;
         private System.Windows.Forms.Button btNew;
         private System.Windows.Forms.Button btLeave;
-        private System.Windows.Forms.Button brReport;
+        private System.Windows.Forms.Button btReport;
         private System.Windows.Forms.Button btEliminate;
         private System.Windows.Forms.Button btUpdate;
         private System.Windows.Forms.Button btCancel;
