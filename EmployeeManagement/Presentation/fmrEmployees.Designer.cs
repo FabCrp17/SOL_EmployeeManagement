@@ -327,6 +327,7 @@
             // cbDeparrment
             // 
             this.cbDeparrment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            this.cbDeparrment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDeparrment.ForeColor = System.Drawing.SystemColors.Window;
             this.cbDeparrment.FormattingEnabled = true;
             this.cbDeparrment.Location = new System.Drawing.Point(245, 335);
@@ -337,6 +338,7 @@
             // cbPosition
             // 
             this.cbPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            this.cbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPosition.ForeColor = System.Drawing.SystemColors.Window;
             this.cbPosition.FormattingEnabled = true;
             this.cbPosition.Location = new System.Drawing.Point(738, 335);

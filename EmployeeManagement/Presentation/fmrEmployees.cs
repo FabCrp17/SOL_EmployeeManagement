@@ -61,6 +61,9 @@ namespace EmployeeManagement.Presentation
         private void fmrEmployees_Load(object sender, EventArgs e)
         {
             UploadEmployees("%");
+            SelectDepartment();
+            SelectPosition();
+
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -76,6 +79,26 @@ namespace EmployeeManagement.Presentation
             dgvEmployeesList.DataSource = Data.List_Employyes(cSearch);
 
             EmployeeFormtList();
+        }
+
+        private void SelectDepartment()
+        {
+            D_departments Data = new D_departments();
+            cbDeparrment.DataSource = Data.List_Department();
+            cbDeparrment.ValueMember = "id_department";
+            cbDeparrment.DisplayMember = "department_name";
+            cbDeparrment.SelectedIndex = -1;
+
+        }
+
+        private void SelectPosition()
+        {
+            D_Positions Data = new D_Positions();
+            cbPosition.DataSource = Data.List_Positions();
+            cbPosition.ValueMember = "id_position";
+            cbPosition.DisplayMember = "position_name";
+            cbPosition.SelectedIndex = -1;
+
         }
 
         private void EmployeeFormtList()

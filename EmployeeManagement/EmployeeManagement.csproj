@@ -48,7 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Connection.cs" />
+    <Compile Include="Data\D_departments.cs" />
     <Compile Include="Data\D_Employees.cs" />
+    <Compile Include="Data\D_Positions.cs" />
     <Compile Include="Presentation\fmrEmployees.cs">
       <SubType>Form</SubType>
     </Compile>
