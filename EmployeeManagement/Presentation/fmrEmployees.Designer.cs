@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmrEmployees));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btLeave = new System.Windows.Forms.Button();
+            this.brReport = new System.Windows.Forms.Button();
+            this.btEliminate = new System.Windows.Forms.Button();
+            this.btUpdate = new System.Windows.Forms.Button();
+            this.btNew = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,18 +53,13 @@
             this.cbDeparrment = new System.Windows.Forms.ComboBox();
             this.cbPosition = new System.Windows.Forms.ComboBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btNew = new System.Windows.Forms.Button();
-            this.btUpdate = new System.Windows.Forms.Button();
-            this.btEliminate = new System.Windows.Forms.Button();
-            this.brReport = new System.Windows.Forms.Button();
-            this.btLeave = new System.Windows.Forms.Button();
+            this.dgvEmployeesList = new System.Windows.Forms.DataGridView();
             this.btCancel = new System.Windows.Forms.Button();
             this.btSave = new System.Windows.Forms.Button();
             this.btSearch = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeesList)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -77,6 +77,91 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // btLeave
+            // 
+            this.btLeave.BackColor = System.Drawing.Color.Red;
+            this.btLeave.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btLeave.FlatAppearance.BorderSize = 6;
+            this.btLeave.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btLeave.Image = ((System.Drawing.Image)(resources.GetObject("btLeave.Image")));
+            this.btLeave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btLeave.Location = new System.Drawing.Point(20, 449);
+            this.btLeave.Name = "btLeave";
+            this.btLeave.Padding = new System.Windows.Forms.Padding(20, 0, 40, 0);
+            this.btLeave.Size = new System.Drawing.Size(213, 70);
+            this.btLeave.TabIndex = 4;
+            this.btLeave.Text = "SALIR";
+            this.btLeave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btLeave.UseVisualStyleBackColor = false;
+            // 
+            // brReport
+            // 
+            this.brReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(212)))), ((int)(((byte)(2)))));
+            this.brReport.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.brReport.FlatAppearance.BorderSize = 6;
+            this.brReport.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.brReport.Image = ((System.Drawing.Image)(resources.GetObject("brReport.Image")));
+            this.brReport.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.brReport.Location = new System.Drawing.Point(20, 366);
+            this.brReport.Name = "brReport";
+            this.brReport.Padding = new System.Windows.Forms.Padding(20, 0, 40, 0);
+            this.brReport.Size = new System.Drawing.Size(213, 70);
+            this.brReport.TabIndex = 3;
+            this.brReport.Text = "REPORTE";
+            this.brReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.brReport.UseVisualStyleBackColor = false;
+            // 
+            // btEliminate
+            // 
+            this.btEliminate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(212)))), ((int)(((byte)(2)))));
+            this.btEliminate.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btEliminate.FlatAppearance.BorderSize = 6;
+            this.btEliminate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btEliminate.Image = global::EmployeeManagement.Properties.Resources.eliminar_usuario;
+            this.btEliminate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btEliminate.Location = new System.Drawing.Point(20, 283);
+            this.btEliminate.Name = "btEliminate";
+            this.btEliminate.Padding = new System.Windows.Forms.Padding(20, 0, 40, 0);
+            this.btEliminate.Size = new System.Drawing.Size(213, 70);
+            this.btEliminate.TabIndex = 2;
+            this.btEliminate.Text = "ELIMINAR";
+            this.btEliminate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btEliminate.UseVisualStyleBackColor = false;
+            // 
+            // btUpdate
+            // 
+            this.btUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(212)))), ((int)(((byte)(2)))));
+            this.btUpdate.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btUpdate.FlatAppearance.BorderSize = 6;
+            this.btUpdate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btUpdate.Image")));
+            this.btUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btUpdate.Location = new System.Drawing.Point(20, 200);
+            this.btUpdate.Name = "btUpdate";
+            this.btUpdate.Padding = new System.Windows.Forms.Padding(20, 0, 40, 0);
+            this.btUpdate.Size = new System.Drawing.Size(213, 70);
+            this.btUpdate.TabIndex = 1;
+            this.btUpdate.Text = "ACTUALIZAR";
+            this.btUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btUpdate.UseVisualStyleBackColor = false;
+            // 
+            // btNew
+            // 
+            this.btNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(212)))), ((int)(((byte)(2)))));
+            this.btNew.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btNew.FlatAppearance.BorderSize = 6;
+            this.btNew.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btNew.Image = ((System.Drawing.Image)(resources.GetObject("btNew.Image")));
+            this.btNew.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btNew.Location = new System.Drawing.Point(20, 117);
+            this.btNew.Name = "btNew";
+            this.btNew.Padding = new System.Windows.Forms.Padding(20, 0, 40, 0);
+            this.btNew.Size = new System.Drawing.Size(213, 70);
+            this.btNew.TabIndex = 0;
+            this.btNew.Text = "NUEVO";
+            this.btNew.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btNew.UseVisualStyleBackColor = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
@@ -86,6 +171,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1139, 85);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label1
             // 
@@ -260,104 +346,19 @@
             this.txtSearch.Size = new System.Drawing.Size(717, 32);
             this.txtSearch.TabIndex = 20;
             // 
-            // dataGridView1
+            // dgvEmployeesList
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(113, 545);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(902, 122);
-            this.dataGridView1.TabIndex = 21;
-            // 
-            // btNew
-            // 
-            this.btNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(212)))), ((int)(((byte)(2)))));
-            this.btNew.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.btNew.FlatAppearance.BorderSize = 6;
-            this.btNew.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btNew.Image = ((System.Drawing.Image)(resources.GetObject("btNew.Image")));
-            this.btNew.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btNew.Location = new System.Drawing.Point(20, 117);
-            this.btNew.Name = "btNew";
-            this.btNew.Padding = new System.Windows.Forms.Padding(20, 0, 40, 0);
-            this.btNew.Size = new System.Drawing.Size(213, 70);
-            this.btNew.TabIndex = 0;
-            this.btNew.Text = "NUEVO";
-            this.btNew.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btNew.UseVisualStyleBackColor = false;
-            // 
-            // btUpdate
-            // 
-            this.btUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(212)))), ((int)(((byte)(2)))));
-            this.btUpdate.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.btUpdate.FlatAppearance.BorderSize = 6;
-            this.btUpdate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btUpdate.Image")));
-            this.btUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btUpdate.Location = new System.Drawing.Point(20, 200);
-            this.btUpdate.Name = "btUpdate";
-            this.btUpdate.Padding = new System.Windows.Forms.Padding(20, 0, 40, 0);
-            this.btUpdate.Size = new System.Drawing.Size(213, 70);
-            this.btUpdate.TabIndex = 1;
-            this.btUpdate.Text = "ACTUALIZAR";
-            this.btUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btUpdate.UseVisualStyleBackColor = false;
-            // 
-            // btEliminate
-            // 
-            this.btEliminate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(212)))), ((int)(((byte)(2)))));
-            this.btEliminate.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.btEliminate.FlatAppearance.BorderSize = 6;
-            this.btEliminate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btEliminate.Image = global::EmployeeManagement.Properties.Resources.eliminar_usuario;
-            this.btEliminate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btEliminate.Location = new System.Drawing.Point(20, 283);
-            this.btEliminate.Name = "btEliminate";
-            this.btEliminate.Padding = new System.Windows.Forms.Padding(20, 0, 40, 0);
-            this.btEliminate.Size = new System.Drawing.Size(213, 70);
-            this.btEliminate.TabIndex = 2;
-            this.btEliminate.Text = "ELIMINAR";
-            this.btEliminate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btEliminate.UseVisualStyleBackColor = false;
-            // 
-            // brReport
-            // 
-            this.brReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(212)))), ((int)(((byte)(2)))));
-            this.brReport.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.brReport.FlatAppearance.BorderSize = 6;
-            this.brReport.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.brReport.Image = ((System.Drawing.Image)(resources.GetObject("brReport.Image")));
-            this.brReport.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.brReport.Location = new System.Drawing.Point(20, 366);
-            this.brReport.Name = "brReport";
-            this.brReport.Padding = new System.Windows.Forms.Padding(20, 0, 40, 0);
-            this.brReport.Size = new System.Drawing.Size(213, 70);
-            this.brReport.TabIndex = 3;
-            this.brReport.Text = "REPORTE";
-            this.brReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.brReport.UseVisualStyleBackColor = false;
-            // 
-            // btLeave
-            // 
-            this.btLeave.BackColor = System.Drawing.Color.Red;
-            this.btLeave.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.btLeave.FlatAppearance.BorderSize = 6;
-            this.btLeave.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btLeave.Image = ((System.Drawing.Image)(resources.GetObject("btLeave.Image")));
-            this.btLeave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btLeave.Location = new System.Drawing.Point(20, 449);
-            this.btLeave.Name = "btLeave";
-            this.btLeave.Padding = new System.Windows.Forms.Padding(20, 0, 40, 0);
-            this.btLeave.Size = new System.Drawing.Size(213, 70);
-            this.btLeave.TabIndex = 4;
-            this.btLeave.Text = "SALIR";
-            this.btLeave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btLeave.UseVisualStyleBackColor = false;
+            this.dgvEmployeesList.AllowUserToAddRows = false;
+            this.dgvEmployeesList.AllowUserToDeleteRows = false;
+            this.dgvEmployeesList.AllowUserToOrderColumns = true;
+            this.dgvEmployeesList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmployeesList.Location = new System.Drawing.Point(113, 545);
+            this.dgvEmployeesList.Name = "dgvEmployeesList";
+            this.dgvEmployeesList.ReadOnly = true;
+            this.dgvEmployeesList.RowHeadersWidth = 51;
+            this.dgvEmployeesList.RowTemplate.Height = 24;
+            this.dgvEmployeesList.Size = new System.Drawing.Size(902, 122);
+            this.dgvEmployeesList.TabIndex = 21;
             // 
             // btCancel
             // 
@@ -420,7 +421,7 @@
             this.Controls.Add(this.btSearch);
             this.Controls.Add(this.btCancel);
             this.Controls.Add(this.btSave);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvEmployeesList);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.cbPosition);
             this.Controls.Add(this.cbDeparrment);
@@ -448,10 +449,11 @@
             this.Name = "fmrEmployees";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "X";
+            this.Load += new System.EventHandler(this.fmrEmployees_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeesList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -478,7 +480,7 @@
         private System.Windows.Forms.ComboBox cbDeparrment;
         private System.Windows.Forms.ComboBox cbPosition;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvEmployeesList;
         private System.Windows.Forms.Button btNew;
         private System.Windows.Forms.Button btLeave;
         private System.Windows.Forms.Button brReport;

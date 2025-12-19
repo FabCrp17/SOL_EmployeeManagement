@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EmployeeManagement.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -56,5 +57,25 @@ namespace EmployeeManagement.Presentation
         {
 
         }
+
+        private void fmrEmployees_Load(object sender, EventArgs e)
+        {
+            UploadEmployees("%");
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        #region "Methods"
+
+        private void UploadEmployees(string cSearch)
+        {
+            D_Employees Data = new D_Employees();
+            dgvEmployeesList.DataSource = Data.List_Employyes(cSearch);
+        }
+
+        #endregion
     }
 }
