@@ -280,6 +280,7 @@
             // txtName
             // 
             this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            this.txtName.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.txtName.Location = new System.Drawing.Point(245, 120);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(264, 32);
@@ -289,6 +290,7 @@
             // txtAddress
             // 
             this.txtAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            this.txtAddress.ForeColor = System.Drawing.SystemColors.Window;
             this.txtAddress.Location = new System.Drawing.Point(245, 180);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(770, 32);
@@ -298,6 +300,7 @@
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            this.txtPhoneNumber.ForeColor = System.Drawing.SystemColors.Window;
             this.txtPhoneNumber.Location = new System.Drawing.Point(245, 263);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(264, 32);
@@ -306,6 +309,7 @@
             // txtSalary
             // 
             this.txtSalary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            this.txtSalary.ForeColor = System.Drawing.SystemColors.Window;
             this.txtSalary.Location = new System.Drawing.Point(738, 263);
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.Size = new System.Drawing.Size(277, 32);
@@ -323,6 +327,7 @@
             // cbDeparrment
             // 
             this.cbDeparrment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            this.cbDeparrment.ForeColor = System.Drawing.SystemColors.Window;
             this.cbDeparrment.FormattingEnabled = true;
             this.cbDeparrment.Location = new System.Drawing.Point(245, 335);
             this.cbDeparrment.Name = "cbDeparrment";
@@ -332,6 +337,7 @@
             // cbPosition
             // 
             this.cbPosition.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            this.cbPosition.ForeColor = System.Drawing.SystemColors.Window;
             this.cbPosition.FormattingEnabled = true;
             this.cbPosition.Location = new System.Drawing.Point(738, 335);
             this.cbPosition.Name = "cbPosition";
@@ -341,10 +347,12 @@
             // txtSearch
             // 
             this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(17)))), ((int)(((byte)(24)))));
+            this.txtSearch.ForeColor = System.Drawing.SystemColors.Window;
             this.txtSearch.Location = new System.Drawing.Point(245, 471);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(717, 32);
             this.txtSearch.TabIndex = 20;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // dgvEmployeesList
             // 

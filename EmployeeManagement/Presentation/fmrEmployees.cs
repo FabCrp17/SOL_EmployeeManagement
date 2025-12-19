@@ -55,7 +55,7 @@ namespace EmployeeManagement.Presentation
 
         private void button8_Click(object sender, EventArgs e)
         {
-
+            UploadEmployees(txtSearch.Text);
         }
 
         private void fmrEmployees_Load(object sender, EventArgs e)
@@ -74,8 +74,24 @@ namespace EmployeeManagement.Presentation
         {
             D_Employees Data = new D_Employees();
             dgvEmployeesList.DataSource = Data.List_Employyes(cSearch);
+
+            EmployeeFormtList();
+        }
+
+        private void EmployeeFormtList()
+        {
+            dgvEmployeesList.Columns[0].Width = 45;
+            dgvEmployeesList.Columns[1].Width = 160;
+            dgvEmployeesList.Columns[2].Width = 160;
+            dgvEmployeesList.Columns[5].Width = 250;
+            dgvEmployeesList.Columns[7].Width = 160;
         }
 
         #endregion
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            UploadEmployees(txtSearch.Text);
+        }
     }
 }
