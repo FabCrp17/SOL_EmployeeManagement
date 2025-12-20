@@ -1,4 +1,5 @@
 ﻿using EmployeeManagement.Data;
+using EmployeeManagement.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -89,6 +90,25 @@ namespace EmployeeManagement.Presentation
             EmployeeFormtList();
         }
 
+        private bool RequiredFields()
+        {
+            bool thereAreEmptyFields = false;
+
+            if (string.IsNullOrEmpty(txtName.Text)) thereAreEmptyFields = true;
+            if (string.IsNullOrEmpty(txtAddress.Text)) thereAreEmptyFields = true;
+            if (string.IsNullOrEmpty(txtPhoneNumber.Text)) thereAreEmptyFields = true;
+            if (string.IsNullOrEmpty(txtSalary.Text)) thereAreEmptyFields = true;
+
+            if (!dtpBirthDate.Checked) thereAreEmptyFields = true;
+
+            if (cbDeparrment.SelectedIndex == -1) thereAreEmptyFields = true;
+            if (cbPosition.SelectedIndex == -1) thereAreEmptyFields = true;
+
+            return thereAreEmptyFields;
+        }
+
+
+
         private void Clear()
         {
             txtName.Clear();
@@ -104,6 +124,38 @@ namespace EmployeeManagement.Presentation
             isSelecEmploye = false;
         }
 
+        private void SaveEmployees()
+        {
+            E_Employee Employee = new E_Employee();
+
+            Employee.employee_name = txtName.Text;
+            Employee.employee_address = txtAddress.Text;
+            Employee.employee_phone_number = txtPhoneNumber.Text;
+            Employee.employe_salary = Convert.ToDecimal(txtSalary.Text);
+            Employee.employee_bithdate = dtpBirthDate.Value;
+            Employee.id_department = Convert.ToInt32(cbDeparrment.SelectedValue);
+            Employee.id_position = Convert.ToInt32(cbPosition.SelectedValue);
+
+            D_Employees Data = new D_Employees();
+            string answer = Data.Save_Employee(Employee);
+
+            if (answer == "OK")
+            {
+                UploadEmployees("%");
+                Clear();
+                ActiveTextBox(false);
+                ActiveButon(true);
+
+                MessageBox.Show("Datos Guardados Correctamente!", "Sistema Gestión De Empleados", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(answer, "Sistema Gestión De Empleados", MessageBoxButtons.OK,
+    MessageBoxIcon.Information);  
+            }
+
+        }
         private void SelectEmployee()
         {
             isSelecEmploye = true;
@@ -214,6 +266,18 @@ namespace EmployeeManagement.Presentation
             else
             {
                 MessageBox.Show("No hay ningun campo seleccionado, porfavor seleccione un campo.", "Sistema de Gestión de Empleados", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btSave_Click(object sender, EventArgs e)
+        {
+            if (RequiredFields())
+            {
+                MessageBox.Show("Hay Campos Vacios, Debes Llenar Todos Los Campos.", "Sistema Gestion de Empleados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                SaveEmployees();
             }
         }
     }

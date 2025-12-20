@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EmployeeManagement.Entities;
 
 namespace EmployeeManagement.Data
 {
@@ -43,6 +44,44 @@ namespace EmployeeManagement.Data
 
                 }
             }
+        }
+
+        public string Save_Employee(E_Employee Employee)
+        {
+            string answer = "";
+            SqlConnection SqlCon = new SqlConnection();
+
+            try
+            {
+                SqlCon = Connection.createInstance().CreateConnection();
+                SqlCommand command = new SqlCommand("SP_SAVE_EMPLOYEES", SqlCon);
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.Add("@cName", SqlDbType.VarChar).Value = Employee.employee_name;
+                command.Parameters.Add("@cAddress", SqlDbType.VarChar).Value = Employee.employee_address;
+                command.Parameters.Add("@dBirthDate", SqlDbType.Date).Value = Employee.employee_bithdate;
+                command.Parameters.Add("@cPhoneNumber", SqlDbType.VarChar).Value = Employee.employee_phone_number;
+                command.Parameters.Add("@nSalary", SqlDbType.Money).Value = Employee.employe_salary;
+                command.Parameters.Add("@nIdDepartment", SqlDbType.Int).Value = Employee.id_department;
+                command.Parameters.Add("@nIdPosition", SqlDbType.Int).Value = Employee.id_position;
+
+                SqlCon.Open();
+
+                answer = command.ExecuteNonQuery() >= 1 ? "OK" : "Los Datos No Se Pudieron Registrar";
+
+
+            }
+            catch (Exception ex)
+            {
+
+                answer= ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+
+            return answer;
         }
     }
 }

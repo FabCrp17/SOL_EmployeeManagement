@@ -417,6 +417,7 @@
             this.btSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btSave.UseVisualStyleBackColor = false;
             this.btSave.Visible = false;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
             // btSearch
             // 

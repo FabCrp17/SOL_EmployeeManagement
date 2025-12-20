@@ -51,6 +51,7 @@
     <Compile Include="Data\D_departments.cs" />
     <Compile Include="Data\D_Employees.cs" />
     <Compile Include="Data\D_Positions.cs" />
+    <Compile Include="Entities\E_Employee.cs" />
     <Compile Include="Presentation\fmrEmployees.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,9 +95,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entities\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Img\eliminar-usuario.png" />
   </ItemGroup>
